@@ -11,9 +11,9 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 6,
     ecmaFeatures: {
-      "jsx": true,
-      "modules": true
-    }
+      jsx: true,
+      modules: true,
+    },
   },
   plugins: ['react', 'prettier'],
   /**
@@ -24,10 +24,16 @@ module.exports = {
   rules: {
     // indent: ['error', 4],
     'linebreak-style': ['error', 'unix'],
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'always'],
+    quotes: [0, 'single'], //引号类型 `` "" ''
+    semi: ['error', 'always'],
     'no-unused-vars': 0,
-    'prettier/prettier': 'error',
-    'eqeqeq': [2, "allow-null"],
+    eqeqeq: [2, 'allow-null'],
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+      },
+    ],
   },
 };
