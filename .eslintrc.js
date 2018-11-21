@@ -5,24 +5,29 @@ module.exports = {
     es6: true,
   },
   extends: 'react-app',
+
   parserOptions: {
-    ecmaVersion: {
-      // http://es6.ruanyifeng.com/#docs/object#对象的扩展运算符
-      experimentalObjectRestSpread: true,
-      jsx: true,
-    },
+    //设置为 "script" (默认) 或 "module"（如果你的代码是 ECMAScript 模块)。
     sourceType: 'module',
+    ecmaVersion: 6,
     ecmaFeatures: {
-      modules: true,
-    },
+      "jsx": true,
+      "modules": true
+    }
   },
   plugins: ['react', 'prettier'],
+  /**
+   * "off" 或 0 - 关闭规则
+   * "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出),
+   * "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
+   */
   rules: {
     // indent: ['error', 4],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
     'no-unused-vars': 0,
     'prettier/prettier': 'error',
+    'eqeqeq': [2, "allow-null"],
   },
 };
